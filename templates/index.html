@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Super Duper Extra Sorry! 💖</title>
+    <title>To My Beautiful Kwankao 💖</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Bubblegum+Sans&family=Baloo+2&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Bubblegum+Sans&family=Baloo+2&family=Mali:wght@400;600&display=swap');
         
         * {
             margin: 0;
@@ -14,9 +14,18 @@
             box-sizing: border-box;
         }
         
+        :root {
+            --primary-color: #ff66b2;
+            --secondary-color: #ff99cc;
+            --tertiary-color: #ffcce6;
+            --accent-color: #ff3399;
+            --text-color: #555;
+            --light-color: #fff9fb;
+        }
+        
         body {
-            font-family: 'Poppins', sans-serif;
-            background: linear-gradient(135deg, #ffcefe, #ffe0fd, #ffd6f3, #d9f2ff, #c1e8ff, #d5ffe6, #ffffe0);
+            font-family: 'Mali', cursive;
+            background: linear-gradient(135deg, #ffdaec, #ffe0fd, #ffd6f3, #d9f2ff, #c1e8ff, #ffe6db, #fff8e0);
             background-size: 400% 400%;
             animation: gradient 15s ease infinite;
             min-height: 100vh;
@@ -34,33 +43,60 @@
         }
         
         .container {
-            max-width: 550px;
+            max-width: 600px;
             background-color: rgba(255, 255, 255, 0.95);
             border-radius: 30px;
-            box-shadow: 0 10px 30px rgba(255, 102, 196, 0.3), 0 5px 15px rgba(255, 102, 196, 0.2);
+            box-shadow: 0 15px 40px rgba(255, 102, 196, 0.3), 0 5px 25px rgba(255, 102, 196, 0.2);
             position: relative;
             text-align: center;
             margin: 20px;
-            padding: 30px;
-            border: 8px solid;
-            border-image: linear-gradient(45deg, #ff99cc, #ffb3e6, #ffccf2, #ccf2ff, #99e6ff, #c1f0e6, #ffffb3) 1;
+            padding: 40px;
+            border: 10px solid;
+            border-image: linear-gradient(45deg, #ff99cc, #ffb3e6, #ffccf2, #ccf2ff, #99e6ff, #ffccb3, #ffffb3) 1;
             overflow: hidden;
+        }
+
+        .thai-pattern {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40"><path d="M0,0 L40,40 M40,0 L0,40" stroke="rgba(255,180,210,0.1)" stroke-width="1"/></svg>');
+            pointer-events: none;
+            z-index: -1;
         }
         
         h1 {
-            color: #ff4db8;
+            color: var(--primary-color);
             margin-bottom: 25px;
-            font-size: 2.8rem;
+            font-size: 3rem;
             font-weight: 700;
             font-family: 'Bubblegum Sans', cursive;
             text-shadow: 3px 3px 0px rgba(255, 153, 204, 0.3);
+            line-height: 1.2;
+        }
+        
+        .name {
+            font-size: 3.5rem;
+            color: #ff339a;
+            display: inline-block;
+            text-shadow: 3px 3px 0px rgba(255, 51, 153, 0.3), 0 0 10px rgba(255, 255, 255, 0.8);
+            animation: nameGlow 2s infinite alternate;
+        }
+        
+        @keyframes nameGlow {
+            0% { text-shadow: 0 0 10px rgba(255, 102, 178, 0.8), 0 0 20px rgba(255, 102, 178, 0.5); }
+            100% { text-shadow: 0 0 15px rgba(255, 102, 178, 1), 0 0 30px rgba(255, 102, 178, 0.8); }
         }
         
         p {
-            color: #666;
+            color: var(--text-color);
             line-height: 1.8;
             margin-bottom: 20px;
-            font-size: 1.15rem;
+            font-size: 1.2rem;
+            font-family: 'Mali', cursive;
+            letter-spacing: 0.5px;
         }
         
         .highlight {
@@ -69,24 +105,50 @@
             font-weight: 600;
         }
         
+        .super-highlight {
+            background: linear-gradient(90deg, rgba(255,204,230,0.4) 0%, rgba(255,153,204,0.6) 50%, rgba(255,204,230,0.4) 100%);
+            padding: 2px 8px;
+            font-weight: 600;
+            border-radius: 8px;
+            color: #d4008f;
+            box-shadow: 0 2px 5px rgba(255,153,204,0.3);
+            display: inline-block;
+            transform: rotate(-1deg);
+        }
+        
         .heart {
-            color: #ff4db8;
-            font-size: 1.3rem;
+            color: #ff3399;
+            font-size: 1.5rem;
             display: inline-block;
             animation: heartbeat 1.5s infinite;
+            margin: 0 3px;
+            vertical-align: middle;
         }
         
         @keyframes heartbeat {
             0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.2); }
+            50% { transform: scale(1.3); }
         }
         
         .signature {
             font-family: 'Bubblegum Sans', cursive;
-            font-size: 2rem;
-            color: #ff4db8;
+            font-size: 2.2rem;
+            color: var(--primary-color);
             margin-top: 30px;
             text-shadow: 2px 2px 0px rgba(255, 153, 204, 0.3);
+            padding: 10px 0;
+            position: relative;
+        }
+        
+        .signature::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            transform: translateX(-50%);
+            width: 150px;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, var(--tertiary-color), transparent);
         }
         
         .hearts {
@@ -121,62 +183,81 @@
         }
         
         .btn {
-            background: linear-gradient(to right, #ff99cc, #ff66b2);
+            background: linear-gradient(to right, var(--secondary-color), var(--primary-color));
             color: white;
             border: none;
             padding: 15px 30px;
             border-radius: 50px;
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             cursor: pointer;
             transition: all 0.3s ease;
-            box-shadow: 0 5px 15px rgba(255, 102, 178, 0.4);
-            margin: 20px 10px;
+            box-shadow: 0 8px 25px rgba(255, 102, 178, 0.4);
+            margin: 25px 10px;
             font-weight: bold;
             font-family: 'Baloo 2', cursive;
             position: relative;
             overflow: hidden;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+            letter-spacing: 1px;
         }
         
         .btn:hover {
-            background: linear-gradient(to right, #ff66b2, #ff3399);
+            background: linear-gradient(to right, var(--primary-color), var(--accent-color));
             transform: translateY(-5px) scale(1.05);
-            box-shadow: 0 8px 25px rgba(255, 102, 178, 0.5);
+            box-shadow: 0 12px 30px rgba(255, 102, 178, 0.5);
         }
         
-        .btn:before {
+        .btn::before {
             content: '';
             position: absolute;
-            top: -10px;
-            left: -10px;
-            width: 10px;
-            height: 10px;
+            top: -20px;
+            left: -20px;
+            width: 20px;
+            height: 20px;
             background-color: white;
             border-radius: 50%;
             opacity: 0.3;
+            transform: scale(1);
             animation: sparkle 3s infinite linear;
         }
         
         @keyframes sparkle {
-            0% { transform: translate(0, 0); opacity: 0.3; }
-            25% { transform: translate(40px, 40px); opacity: 0.6; }
-            50% { transform: translate(80px, 30px); opacity: 0.3; }
-            75% { transform: translate(120px, 60px); opacity: 0.6; }
-            100% { transform: translate(160px, 20px); opacity: 0.3; }
+            0% { transform: translate(0, 0) scale(1); opacity: 0.3; }
+            25% { transform: translate(60px, 60px) scale(2); opacity: 0.6; }
+            50% { transform: translate(120px, 40px) scale(1.5); opacity: 0.3; }
+            75% { transform: translate(180px, 80px) scale(3); opacity: 0.6; }
+            100% { transform: translate(240px, 20px) scale(1); opacity: 0.3; }
         }
         
         .special-message {
             margin-top: 30px;
-            padding: 25px;
+            padding: 30px;
             border-radius: 20px;
-            background-color: #fff4f9;
-            border: 3px solid #ffaad5;
+            background-color: var(--light-color);
+            border: 3px solid var(--tertiary-color);
             border-style: dashed;
             display: none;
-            animation: pop-in 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+            animation: pop-in 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+            box-shadow: 0 10px 25px rgba(255, 153, 204, 0.2);
+            position: relative;
+            z-index: 1;
+        }
+        
+        .special-message::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(255,255,255,0.4) 0%, rgba(255,255,255,0) 100%);
+            border-radius: 17px;
+            z-index: -1;
         }
         
         @keyframes pop-in {
             0% { transform: scale(0.8); opacity: 0; }
+            50% { transform: scale(1.05); opacity: 0.8; }
             100% { transform: scale(1); opacity: 1; }
         }
         
@@ -184,8 +265,8 @@
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
-            gap: 10px;
-            margin: 15px 0;
+            gap: 15px;
+            margin: 20px 0;
         }
         
         .cute-animal {
@@ -195,11 +276,19 @@
             transition: all 0.3s ease;
             animation: bounce 3s infinite;
             animation-delay: calc(var(--delay) * 0.5s);
+            filter: drop-shadow(0 3px 5px rgba(0,0,0,0.1));
+            cursor: pointer;
+            transform-origin: bottom center;
+        }
+        
+        .cute-animal:hover {
+            transform: scale(1.2) translateY(-10px);
+            z-index: 10;
         }
         
         @keyframes bounce {
             0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
+            50% { transform: translateY(-8px) rotate(var(--rotation, 0deg)); }
         }
         
         .bunny-face {
@@ -210,6 +299,7 @@
             position: relative;
             margin: 0 auto;
             box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            overflow: visible;
         }
         
         .bunny-ears {
@@ -488,103 +578,78 @@
             left: 20px;
         }
         
-        /* Panda face */
-        .panda-face {
-            width: 60px;
-            height: 55px;
-            background-color: #fff;
+        /* Elephant face - Thai-inspired */
+        .elephant-face {
+            width: 65px;
+            height: 60px;
+            background-color: #e0e0e0;
             border-radius: 50%;
             position: relative;
-            margin: 5px auto 0;
+            margin: 0 auto;
         }
         
-        .panda-ear {
+        .elephant-ear {
             position: absolute;
-            top: -10px;
-            width: 20px;
-            height: 20px;
-            background-color: #333;
+            width: 30px;
+            height: 40px;
+            background-color: #e0e0e0;
             border-radius: 50%;
+            top: -5px;
         }
         
-        .panda-ear-left {
-            left: 5px;
+        .elephant-ear-left {
+            left: -15px;
+            transform: rotate(-20deg);
         }
         
-        .panda-ear-right {
-            right: 5px;
+        .elephant-ear-right {
+            right: -15px;
+            transform: rotate(20deg);
         }
         
-        .panda-eye-patch {
+        .elephant-eye {
             position: absolute;
-            width: 22px;
-            height: 18px;
-            background-color: #333;
-            border-radius: 50%;
-            top: 12px;
-        }
-        
-        .panda-eye-patch-left {
-            left: 8px;
-            transform: rotate(-10deg);
-        }
-        
-        .panda-eye-patch-right {
-            right: 8px;
-            transform: rotate(10deg);
-        }
-        
-        .panda-eye {
-            position: absolute;
-            width: 6px;
-            height: 6px;
-            background-color: #333;
-            border-radius: 50%;
-            top: 18px;
-        }
-        
-        .panda-eye-left {
-            left: 16px;
-        }
-        
-        .panda-eye-right {
-            right: 16px;
-        }
-        
-        .panda-nose {
-            position: absolute;
-            width: 12px;
+            width: 8px;
             height: 8px;
             background-color: #333;
             border-radius: 50%;
-            top: 30px;
-            left: 24px;
+            top: 20px;
         }
         
-        .panda-mouth {
+        .elephant-eye-left {
+            left: 15px;
+        }
+        
+        .elephant-eye-right {
+            right: 15px;
+        }
+        
+        .elephant-trunk {
             position: absolute;
-            width: 10px;
-            height: 5px;
-            border-radius: 0 0 10px 10px;
-            border-bottom: 2px solid #666;
-            top: 40px;
+            width: 15px;
+            height: 30px;
+            background-color: #e0e0e0;
+            border-radius: 10px;
+            bottom: -25px;
             left: 25px;
+            z-index: -1;
         }
         
         .balloon-container {
             display: flex;
             justify-content: space-around;
-            margin: 20px 0;
+            margin: 20px 0 30px;
         }
         
         .balloon {
             position: relative;
             width: 50px;
             height: 60px;
-            background: linear-gradient(135deg, #ff99cc, #ff66b2);
+            background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
             border-radius: 50%;
-            animation: float 4s ease-in-out infinite;
+            animation: float 5s ease-in-out infinite;
             animation-delay: calc(var(--delay) * 0.3s);
+            filter: drop-shadow(0 5px 15px rgba(255, 102, 178, 0.3));
         }
         
         .balloon::before {
@@ -592,7 +657,7 @@
             position: absolute;
             width: 12px;
             height: 8px;
-            background: #ff99cc;
+            background: var(--secondary-color);
             border-radius: 0 0 5px 5px;
             bottom: -4px;
             left: 50%;
@@ -635,37 +700,41 @@
             --delay: 2;
         }
         
+        .balloon:nth-child(6) {
+            background: linear-gradient(135deg, #fff2b3, #ffeb99);
+            --delay: 2.5;
+        }
+        
         @keyframes float {
             0%, 100% { transform: translateY(0) rotate(-3deg); }
-            50% { transform: translateY(-15px) rotate(3deg); }
+            50% { transform: translateY(-20px) rotate(3deg); }
         }
         
         .message-box {
-            background-color: #fff9fb;
+            background-color: var(--light-color);
             border-radius: 25px;
-            padding: 15px;
-            margin: 15px 0;
-            box-shadow: 0 5px 10px rgba(255, 153, 204, 0.2);
+            padding: 20px;
+            margin: 25px 0;
+            box-shadow: 0 10px 20px rgba(255, 153, 204, 0.2);
             position: relative;
             transition: all 0.3s ease;
-            border: 2px solid #ffcce6;
+            border: 3px solid var(--tertiary-color);
             border-style: dashed;
+            transform: rotate(-1deg);
+        }
+        
+        .message-box:hover {
+            transform: rotate(1deg) scale(1.03);
+            box-shadow: 0 15px 30px rgba(255, 153, 204, 0.3);
         }
         
         .message-box:after {
             content: '💕';
             position: absolute;
-            bottom: -10px;
+            bottom: -15px;
             right: -10px;
-            font-size: 20px;
-            background: white;
-            border-radius: 50%;
-            width: 25px;
-            height: 25px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            font-size: 30px;
+            filter: drop-shadow(0 3px 5px rgba(0,0,0,0.1));
         }
         
         .message-box:before {
@@ -675,11 +744,7 @@
             left: 20px;
             border-left: 12px solid transparent;
             border-right: 12px solid transparent;
-            border-bottom: 12px solid #ffcce6;
-        }
-        
-        .message-box:hover {
-            transform: scale(1.02);
+            border-bottom: 12px solid var(--tertiary-color);
         }
         
         .confetti {
@@ -716,16 +781,25 @@
         .cute-icons {
             display: flex;
             justify-content: center;
-            gap: 15px;
+            flex-wrap: wrap;
+            gap: 20px;
             margin: 20px 0;
-            font-size: 24px;
+            font-size: 28px;
         }
         
         .cute-icon {
             display: inline-block;
             animation: wobble 3s infinite ease-in-out;
             animation-delay: calc(var(--delay) * 0.2s);
-            font-size: 26px;
+            font-size: 30px;
+            position: relative;
+            filter: drop-shadow(0 2px 5px rgba(0,0,0,0.1));
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        
+        .cute-icon:hover {
+            transform: scale(1.3) rotate(15deg);
         }
         
         .cute-icon:nth-child(1) { --delay: 0; }
@@ -735,53 +809,84 @@
         .cute-icon:nth-child(5) { --delay: 4; }
         .cute-icon:nth-child(6) { --delay: 5; }
         .cute-icon:nth-child(7) { --delay: 6; }
+        .cute-icon:nth-child(8) { --delay: 7; }
+        .cute-icon:nth-child(9) { --delay: 8; }
         
         @keyframes wobble {
             0%, 100% { transform: translateY(0) rotate(0deg); }
-            25% { transform: translateY(-5px) rotate(-5deg); }
-            75% { transform: translateY(-5px) rotate(5deg); }
+            25% { transform: translateY(-8px) rotate(-5deg); }
+            75% { transform: translateY(-8px) rotate(5deg); }
         }
         
         .polaroid {
             background: white;
-            padding: 10px 10px 30px 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            transform: rotate(-3deg);
-            transition: all 0.3s ease;
-            width: 180px;
-            margin: 20px auto;
+            padding: 15px 15px 40px 15px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+            transform: rotate(-2deg);
+            transition: all 0.5s ease;
+            width: 200px;
+            margin: 30px auto;
             position: relative;
+            border-radius: 2px;
+        }
+        
+        .polaroid::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(255,255,255,0.4) 0%, rgba(255,255,255,0) 50%);
+            border-radius: 2px;
+            z-index: 2;
         }
         
         .polaroid:hover {
-            transform: rotate(0deg) scale(1.05);
-            box-shadow: 0 8px 20px rgba(255, 102, 178, 0.3);
+            transform: rotate(2deg) scale(1.08);
+            box-shadow: 0 15px 35px rgba(255, 102, 178, 0.4);
         }
         
         .polaroid:after {
             content: '♡';
             position: absolute;
-            bottom: 10px;
-            right: 10px;
-            color: #ff99cc;
-            font-size: 16px;
+            bottom: 15px;
+            right: 15px;
+            color: var(--secondary-color);
+            font-size: 20px;
         }
         
         .photo-placeholder {
-            height: 150px;
+            height: 180px;
             background: linear-gradient(135deg, #ffcce6, #ff99cc);
             display: flex;
             justify-content: center;
             align-items: center;
-            font-size: 40px;
+            font-size: 60px;
             color: white;
+            position: relative;
+            overflow: hidden;
+            border-radius: 2px;
+        }
+        
+        .photo-placeholder::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0) 50%);
+            z-index: 1;
         }
         
         .photo-caption {
             text-align: center;
-            margin-top: 10px;
-            font-size: 0.9rem;
-            font-family: 'Bubblegum Sans', cursive;
+            margin-top: 15px;
+            font-size: 1rem;
+            font-family: 'Mali', cursive;
+            color: var(--primary-color);
+            font-weight: bold;
         }
         
         .ribbon {
@@ -799,7 +904,7 @@
             position: absolute;
             content: '';
             display: block;
-            border: 5px solid #ff4d94;
+            border: 5px solid var(--accent-color);
             z-index: -1;
         }
         
@@ -816,29 +921,31 @@
         .ribbon-content {
             width: 200px;
             height: 40px;
-            background: #ff80bf;
+            background: linear-gradient(to right, var(--secondary-color), var(--primary-color));
             transform: rotate(45deg);
             position: absolute;
             top: 30px;
             right: -50px;
-            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
             color: white;
             text-align: center;
             line-height: 40px;
-            font-size: 0.9rem;
+            font-size: 1rem;
             font-weight: bold;
             font-family: 'Bubblegum Sans', cursive;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
         }
         
         #loveGauge {
-            width: 250px;
-            height: 40px;
-            background-color: #f2f2f2;
+            width: 280px;
+            height: 45px;
+            background-color: #f8f8f8;
             border-radius: 30px;
-            margin: 25px auto;
+            margin: 35px auto;
             position: relative;
             overflow: hidden;
-            box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
+            box-shadow: inset 0 3px 8px rgba(0, 0, 0, 0.1), 0 5px 15px rgba(255, 153, 204, 0.2);
+            border: 2px solid rgba(255, 153, 204, 0.3);
         }
         
         #loveBar {
@@ -847,14 +954,9 @@
             background: linear-gradient(45deg, #ff99cc, #ff66b2, #ff33cc, #ff66b2, #ff99cc);
             background-size: 200% 200%;
             border-radius: 30px;
-            transition: width 2s ease;
+            transition: width 3s ease;
             animation: gradient 3s linear infinite;
-        }
-        
-        @keyframes gradient {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
+            box-shadow: 0 0 15px rgba(255, 102, 178, 0.6);
         }
         
         #lovePercent {
@@ -864,28 +966,45 @@
             transform: translate(-50%, -50%);
             color: #333;
             font-weight: bold;
-            text-shadow: 0 0 3px rgba(255, 255, 255, 0.5);
+            text-shadow: 0 0 4px rgba(255, 255, 255, 0.8);
             z-index: 1;
+            font-size: 1.1rem;
+            letter-spacing: 1px;
         }
         
         .hugs-kisses {
-            margin: 20px 0;
+            margin: 25px 0;
             font-family: 'Bubblegum Sans', cursive;
-            font-size: 1.6rem;
-            color: #ff4d94;
-            letter-spacing: 5px;
+            font-size: 2rem;
+            color: var(--accent-color);
+            letter-spacing: 8px;
+            text-shadow: 2px 2px 4px rgba(255, 153, 204, 0.3);
+            filter: drop-shadow(0 2px 4px rgba(255, 153, 204, 0.2));
         }
         
         .flower-border {
             display: flex;
             justify-content: space-around;
-            margin: 10px 0;
+            margin: 15px 0;
         }
         
         .flower {
-            font-size: 20px;
+            font-size: 24px;
             animation: sway 3s infinite ease-in-out;
             animation-delay: calc(var(--delay) * 0.2s);
+            filter: drop-shadow(0 2px 3px rgba(0,0,0,0.1));
+            position: relative;
+        }
+        
+        .flower::after {
+            content: '✨';
+            position: absolute;
+            font-size: 10px;
+            top: -5px;
+            right: -5px;
+            opacity: 0;
+            animation: twinkle 2s infinite;
+            animation-delay: calc(var(--delay) * 0.5s + 1s);
         }
         
         .flower:nth-child(1) { --delay: 0; }
@@ -894,18 +1013,22 @@
         .flower:nth-child(4) { --delay: 3; }
         .flower:nth-child(5) { --delay: 4; }
         .flower:nth-child(6) { --delay: 5; }
+        .flower:nth-child(7) { --delay: 6; }
+        .flower:nth-child(8) { --delay: 7; }
         
         @keyframes sway {
             0%, 100% { transform: translateY(0) rotate(-5deg); }
-            50% { transform: translateY(-5px) rotate(5deg); }
+            50% { transform: translateY(-8px) rotate(5deg); }
         }
         
         .sparkle {
             position: absolute;
             color: #ffcc00;
-            font-size: 16px;
+            font-size: 20px;
             opacity: 0;
             animation: twinkle 2s infinite;
+            z-index: 0;
+            filter: drop-shadow(0 0 5px rgba(255, 204, 0, 0.5));
         }
         
         @keyframes twinkle {
@@ -915,54 +1038,68 @@
         
         .paw-prints {
             position: absolute;
-            color: rgba(255, 153, 204, 0.3);
-            font-size: 16px;
+            color: rgba(255, 153, 204, 0.2);
+            font-size: 18px;
             z-index: 0;
         }
         
         .countdown {
-            background-color: #ffecf5;
+            background: linear-gradient(to right, #ffebf5, #fff4fb);
             border-radius: 15px;
-            padding: 10px;
-            margin: 15px auto;
-            width: 200px;
+            padding: 15px;
+            margin: 20px auto;
+            width: 250px;
             text-align: center;
-            box-shadow: 0 3px 10px rgba(255, 153, 204, 0.3);
+            box-shadow: 0 8px 20px rgba(255, 153, 204, 0.3);
             font-family: 'Baloo 2', cursive;
             display: none;
+            position: relative;
+            border: 2px dashed rgba(255, 153, 204, 0.4);
+        }
+        
+        .countdown::before {
+            content: '🗓️';
+            position: absolute;
+            top: -15px;
+            left: -15px;
+            font-size: 30px;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+            background: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.1);
         }
         
         .countdown-title {
-            font-size: 1rem;
-            margin-bottom: 5px;
-            color: #ff4d94;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: var(--accent-color);
             font-weight: bold;
+            text-shadow: 1px 1px 2px rgba(255,255,255,0.8);
         }
         
         .countdown-time {
-            font-size: 1.2rem;
-            color: #ff80bf;
+            font-size: 1.4rem;
+            color: var(--primary-color);
             font-weight: bold;
-        }
-        
-        .cloud {
-            position: absolute;
-            background-color: white;
-            border-radius: 50%;
-            filter: drop-shadow(0 5px 5px rgba(0,0,0,0.1));
-            opacity: 0.9;
-            z-index: -1;
+            letter-spacing: 1px;
+            text-shadow: 1px 1px 2px rgba(255,255,255,0.8);
         }
         
         .thought-bubble {
             position: relative;
             background: #fff;
             border-radius: 30px;
-            padding: 15px;
-            margin: 20px 40px;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-            border: 2px solid #ffcce6;
+            padding: 20px;
+            margin: 30px 40px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            border: 2px solid var(--tertiary-color);
             display: none;
+            transform: rotate(2deg);
         }
   
         .thought-bubble:before,
@@ -970,22 +1107,22 @@
             content: '';
             position: absolute;
             background: #fff;
-            border: 2px solid #ffcce6;
+            border: 2px solid var(--tertiary-color);
             border-radius: 50%;
         }
         
         .thought-bubble:before {
-            width: 20px;
-            height: 20px;
-            bottom: -15px;
-            left: 20px;
+            width: 25px;
+            height: 25px;
+            bottom: -20px;
+            left: 25px;
         }
         
         .thought-bubble:after {
-            width: 10px;
-            height: 10px;
-            bottom: -25px;
-            left: 30px;
+            width: 15px;
+            height: 15px;
+            bottom: -35px;
+            left: 40px;
         }
         
         .emoji-rain {
@@ -1001,9 +1138,10 @@
         
         .emoji {
             position: absolute;
-            font-size: 24px;
-            top: -30px;
+            font-size: 30px;
+            top: -40px;
             animation: emojiRain linear forwards;
+            filter: drop-shadow(0 3px 5px rgba(0,0,0,0.1));
         }
         
         @keyframes emojiRain {
@@ -1019,376 +1157,23 @@
         
         .sticker {
             position: absolute;
-            width: 60px;
-            height: 60px;
+            width: 80px;
+            height: 80px;
             border-radius: 50%;
             display: flex;
             justify-content: center;
             align-items: center;
-            font-size: 30px;
-            background: linear-gradient(45deg, #ff99cc, #ffb3e6);
-            box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+            font-size: 40px;
+            background: linear-gradient(45deg, var(--secondary-color), var(--tertiary-color));
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
             transform: rotate(-15deg);
-            bottom: 20px;
-            right: 20px;
+            bottom: 30px;
+            right: 30px;
             animation: wiggle 3s infinite ease-in-out;
+            border: 3px solid white;
+            z-index: 5;
         }
         
         @keyframes wiggle {
             0%, 100% { transform: rotate(-15deg); }
             50% { transform: rotate(15deg); }
-        }
-        
-        .cute-border {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-        }
-        
-        .cute-border-item {
-            position: absolute;
-            font-size: 24px;
-            opacity: 0.8;
-        }
-    </style>
-</head>
-<body>
-    <div class="hearts" id="hearts"></div>
-    <div class="confetti" id="confetti"></div>
-    <div class="emoji-rain" id="emojiRain"></div>
-    
-    <div class="container" id="container">
-        <div class="cute-border" id="cuteBorder"></div>
-        <div class="ribbon">
-            <div class="ribbon-content">For My Sweetie 💗</div>
-        </div>
-        
-        <div class="flower-border">
-            <span class="flower">🌸</span>
-            <span class="flower">🌷</span>
-            <span class="flower">🌹</span>
-            <span class="flower">🌺</span>
-            <span class="flower">🌸</span>
-            <span class="flower">🌷</span>
-        </div>
-        
-        <h1 class="animate__animated animate__heartBeat">I'm Super Duper Sorry <span class="heart">❤️</span></h1>
-        
-        <div class="animal-collection">
-            <div class="cute-animal" style="--delay: 0">
-                <div class="bunny-face">
-                    <div class="bunny-ears bunny-ear-left"></div>
-                    <div class="bunny-ears bunny-ear-right"></div>
-                    <div class="bunny-eye bunny-eye-left"></div>
-                    <div class="bunny-eye bunny-eye-right"></div>
-                    <div class="bunny-nose"></div>
-                    <div class="bunny-mouth"></div>
-                    <div class="bunny-blush bunny-blush-left"></div>
-                    <div class="bunny-blush bunny-blush-right"></div>
-                </div>
-            </div>
-            
-            <div class="cute-animal" style="--delay: 1">
-                <div class="cat-face">
-                    <div class="cat-ear cat-ear-left"></div>
-                    <div class="cat-ear cat-ear-right"></div>
-                    <div class="cat-eye cat-eye-left"></div>
-                    <div class="cat-eye cat-eye-right"></div>
-                    <div class="cat-nose"></div>
-                    <div class="cat-mouth"></div>
-                    <div class="cat-whiskers cat-whiskers-left"></div>
-                    <div class="cat-whiskers cat-whiskers-right"></div>
-                </div>
-            </div>
-            
-            <div class="cute-animal" style="--delay: 2">
-                <div class="puppy-face">
-                    <div class="puppy-ear puppy-ear-left"></div>
-                    <div class="puppy-ear puppy-ear-right"></div>
-                    <div class="puppy-eye puppy-eye-left"></div>
-                    <div class="puppy-eye puppy-eye-right"></div>
-                    <div class="puppy-nose"></div>
-                    <div class="puppy-mouth"></div>
-                </div>
-            </div>
-            
-            <div class="cute-animal" style="--delay: 3">
-                <div class="panda-face">
-                    <div class="panda-ear panda-ear-left"></div>
-                    <div class="panda-ear panda-ear-right"></div>
-                    <div class="panda-eye-patch panda-eye-patch-left"></div>
-                    <div class="panda-eye-patch panda-eye-patch-right"></div>
-                    <div class="panda-eye panda-eye-left"></div>
-                    <div class="panda-eye panda-eye-right"></div>
-                    <div class="panda-nose"></div>
-                    <div class="panda-mouth"></div>
-                </div>
-            </div>
-        </div>
-        
-        <div class="cute-icons">
-            <span class="cute-icon" style="--delay: 0">🌸</span>
-            <span class="cute-icon" style="--delay: 1">💝</span>
-            <span class="cute-icon" style="--delay: 2">✨</span>
-            <span class="cute-icon" style="--delay: 3">🌈</span>
-            <span class="cute-icon" style="--delay: 4">🦄</span>
-            <span class="cute-icon" style="--delay: 5">🍭</span>
-            <span class="cute-icon" style="--delay: 6">🎀</span>
-        </div>
-        
-        <p>My super adorable sweetie pie,</p>
-        
-        <p>I'm <span class="heart">❤️</span> soooo <span class="heart">❤️</span> sorry <span class="heart">❤️</span> for saying you were annoying me and for those hurtful words. You're the <span class="highlight">most precious cutie-pie</span> in my whole entire universe! 🌟</p>
-        
-        <div class="balloon-container">
-            <div class="balloon" style="--delay: 0"></div>
-            <div class="balloon" style="--delay: 1"></div>
-            <div class="balloon" style="--delay: 2"></div>
-            <div class="balloon" style="--delay: 3"></div>
-            <div class="balloon" style="--delay: 4"></div>
-        </div>
-        
-        <div class="message-box">
-            <p>You bring <span class="highlight">soooo much sparkly joy</span> and happiness to my life! 💫 Your smile makes my heart go boom-boom-boom, and your giggles are like the sweetest music to my ears! Every single moment with you is magical! ✨</p>
-        </div>
-        
-        <div class="polaroid">
-            <div class="photo-placeholder">👩‍❤️‍👨</div>
-            <div class="photo-caption">The day you stole my heart forever 💗</div>
-        </div>
-        
-        <p>I pinky promise with sprinkles on top 🍦 to be super thoughtful with my words from now on and to always remember that you're the most special person ever! 🌈 Your feelings are super important to me, and I'll do so much better to show you how much I adore you!</p>
-        
-        <div id="loveGauge">
-            <div id="loveBar"></div>
-            <div id="lovePercent">Love: 0%</div>
-        </div>
-        
-        <div>
-            <button class="btn animate__animated animate__pulse animate__infinite" id="forgiveBtn">Will You Pretty Please Forgive Me? 🥺</button>
-        </div>
-        
-        <div class="special-message" id="specialMessage">
-            <p>Yay! Thank you for giving me another chance! 💕💕💕</p>
-            <p>You mean <span class="highlight">absolutely everything</span> to me, my sweet cupcake! I promise to be more loving, more caring, and to treasure every itty-bitty moment we have together!</p>
-            
-            <div class="thought-bubble" id="thoughtBubble">
-                <p>You know what I love most about you? Your amazing smile that lights up any room and makes my heart skip a beat! 💗</p>
-            </div>
-            
-            <div class="countdown" id="countdown">
-                <div class="countdown-title">Our Special Date Night 💕</div>
-                <div class="countdown-time">3 days, 2 hours, 15 minutes</div>
-            </div>
-            
-            <div class="hugs-kisses">XOXOXOXOXO</div>
-            <p>P.S. I've planned the most magical surprise date for us this weekend with all your favorite things! 🎁✨💖</p>
-        </div>
-        
-        <div class="sticker">
-            <span>💯</span>
-        </div>
-        
-        <div class="flower-border">
-            <span class="flower">🌸</span>
-            <span class="flower">🌷</span>
-            <span class="flower">🌹</span>
-            <span class="flower">🌺</span>
-            <span class="flower">🌸</span>
-            <span class="flower">🌷</span>
-        </div>
-        
-        <p class="signature">Forever & Ever Yours</p>
-    </div>
-    
-    <script>
-        // Create falling hearts
-        function createHeart() {
-            const heart = document.createElement('div');
-            heart.className = 'falling-heart';
-            const heartTypes = ['❤️', '💕', '💖', '💗', '💓', '💘', '💝', '💞', '💟', '♥️', '💌', '💑'];
-            heart.innerHTML = heartTypes[Math.floor(Math.random() * heartTypes.length)];
-            heart.style.left = Math.random() * 100 + 'vw';
-            heart.style.animationDuration = Math.random() * 3 + 3 + 's';
-            
-            document.getElementById('hearts').appendChild(heart);
-            
-            // Remove heart after animation completes
-            setTimeout(() => {
-                heart.remove();
-            }, 6000);
-        }
-        
-        // Create sparkles
-        function createSparkles() {
-            const container = document.getElementById('container');
-            for (let i = 0; i < 20; i++) {
-                const sparkle = document.createElement('div');
-                sparkle.className = 'sparkle';
-                sparkle.innerHTML = '✨';
-                sparkle.style.left = Math.random() * 100 + '%';
-                sparkle.style.top = Math.random() * 100 + '%';
-                sparkle.style.animationDelay = Math.random() * 2 + 's';
-                
-                container.appendChild(sparkle);
-            }
-        }
-        
-        // Create cute border
-        function createCuteBorder() {
-            const border = document.getElementById('cuteBorder');
-            const items = ['🌸', '💕', '💖', '🌷', '✨', '💘', '🦄', '🌈'];
-            const positions = [
-                {top: '10px', left: '10px'},
-                {top: '10px', right: '10px'},
-                {bottom: '10px', left: '10px'},
-                {bottom: '10px', right: '10px'},
-                {top: '10px', left: '50%', transform: 'translateX(-50%)'},
-                {bottom: '10px', left: '50%', transform: 'translateX(-50%)'},
-                {top: '50%', left: '10px', transform: 'translateY(-50%)'},
-                {top: '50%', right: '10px', transform: 'translateY(-50%)'}
-            ];
-            
-            positions.forEach((pos, index) => {
-                const item = document.createElement('div');
-                item.className = 'cute-border-item';
-                item.innerHTML = items[index % items.length];
-                
-                Object.keys(pos).forEach(key => {
-                    item.style[key] = pos[key];
-                });
-                
-                border.appendChild(item);
-            });
-        }
-        
-        // Create paw prints
-        function createPawPrints() {
-            const container = document.getElementById('container');
-            for (let i = 0; i < 10; i++) {
-                const paw = document.createElement('div');
-                paw.className = 'paw-prints';
-                paw.innerHTML = '🐾';
-                paw.style.left = Math.random() * 80 + 10 + '%';
-                paw.style.top = Math.random() * 80 + 10 + '%';
-                paw.style.transform = `rotate(${Math.random() * 360}deg)`;
-                
-                container.appendChild(paw);
-            }
-        }
-        
-        // Create emoji rain
-        function createEmojiRain() {
-            const emojiContainer = document.getElementById('emojiRain');
-            emojiContainer.style.display = 'block';
-            
-            const emojis = ['🌸', '💕', '💖', '🍭', '🎀', '🌷', '✨', '💘', '🦄', '🌈', '🍬', '💝', '🧸', '🍦', '🌺'];
-            
-            for (let i = 0; i < 50; i++) {
-                const emoji = document.createElement('div');
-                emoji.className = 'emoji';
-                emoji.innerHTML = emojis[Math.floor(Math.random() * emojis.length)];
-                emoji.style.left = Math.random() * 100 + 'vw';
-                emoji.style.animationDuration = Math.random() * 3 + 2 + 's';
-                emoji.style.animationDelay = Math.random() * 5 + 's';
-                
-                emojiContainer.appendChild(emoji);
-            }
-        }
-        
-        // Create hearts periodically
-        setInterval(createHeart, 400);
-        
-        // Create initial hearts
-        for (let i = 0; i < 15; i++) {
-            setTimeout(() => {
-                createHeart();
-            }, i * 200);
-        }
-        
-        // Handle love gauge animation
-        function animateLoveGauge() {
-            const loveBar = document.getElementById('loveBar');
-            const lovePercent = document.getElementById('lovePercent');
-            let width = 0;
-            
-            const interval = setInterval(() => {
-                if (width >= 100) {
-                    clearInterval(interval);
-                    lovePercent.textContent = "Love: ∞% 💝";
-                } else {
-                    width++;
-                    loveBar.style.width = width + '%';
-                    lovePercent.textContent = `Love: ${width}%`;
-                }
-            }, 20);
-        }
-        
-        // Initialize page elements
-        window.addEventListener('load', () => {
-            setTimeout(animateLoveGauge, 1000);
-            createSparkles();
-            createPawPrints();
-            createCuteBorder();
-        });
-        
-        // Create confetti
-        function createConfetti() {
-            const confettiContainer = document.getElementById('confetti');
-            confettiContainer.style.display = 'block';
-            
-            const colors = ['#ff99cc', '#ff66b2', '#ff80bf', '#ffb3d9', '#ffe6f2', 
-                           '#ffcce6', '#ff4d94', '#ff1a75', '#d580ff', '#ffb3ff',
-                           '#b3e6ff', '#80d4ff', '#ccf2ff', '#d9f2d9', '#b3e6b3'];
-            
-            for (let i = 0; i < 150; i++) {
-                const confetti = document.createElement('div');
-                confetti.className = 'confetti-piece';
-                confetti.style.left = Math.random() * 100 + 'vw';
-                confetti.style.width = Math.random() * 10 + 5 + 'px';
-                confetti.style.height = Math.random() * 20 + 10 + 'px';
-                confetti.style.background = colors[Math.floor(Math.random() * colors.length)];
-                confetti.style.borderRadius = Math.random() > 0.5 ? '50%' : '0';
-                confetti.style.animation = `confettiRain ${Math.random() * 3 + 2}s linear forwards`;
-                confetti.style.animationDelay = Math.random() * 5 + 's';
-                
-                confettiContainer.appendChild(confetti);
-            }
-        }
-        
-        // Handle forgive button click
-        document.getElementById('forgiveBtn').addEventListener('click', function() {
-            const specialMessage = document.getElementById('specialMessage');
-            specialMessage.style.display = 'block';
-            
-            const thoughtBubble = document.getElementById('thoughtBubble');
-            setTimeout(() => { 
-                thoughtBubble.style.display = 'block';
-            }, 1000);
-            
-            const countdown = document.getElementById('countdown');
-            setTimeout(() => { 
-                countdown.style.display = 'block';
-            }, 2000);
-            
-            this.textContent = "Thank You! I Love You Soooo Much! 💖";
-            this.classList.remove('animate__pulse');
-            this.classList.add('animate__tada');
-            
-            // Create a burst of hearts
-            for (let i = 0; i < 50; i++) {
-                setTimeout(createHeart, i * 40);
-            }
-            
-            // Create confetti celebration
-            createConfetti();
-            
-            // Create emoji rain
-            createEmojiRain();
-        });
-    </script>
-</body>
-</html>
