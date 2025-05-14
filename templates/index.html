@@ -638,6 +638,7 @@
         .balloon-container {
             display: flex;
             justify-content: space-around;
+            flex-wrap: wrap; /* Added for responsiveness */
             margin: 20px 0 30px;
         }
         
@@ -650,6 +651,7 @@
             animation: float 5s ease-in-out infinite;
             animation-delay: calc(var(--delay) * 0.3s);
             filter: drop-shadow(0 5px 15px rgba(255, 102, 178, 0.3));
+            margin: 5px; /* Added for spacing */
         }
         
         .balloon::before {
@@ -700,10 +702,11 @@
             --delay: 2;
         }
         
-        .balloon:nth-child(6) {
+        /* Removed 6th balloon for default 5, can be added back if needed */
+        /* .balloon:nth-child(6) {
             background: linear-gradient(135deg, #fff2b3, #ffeb99);
             --delay: 2.5;
-        }
+        } */
         
         @keyframes float {
             0%, 100% { transform: translateY(0) rotate(-3deg); }
@@ -754,7 +757,7 @@
             top: 0;
             left: 0;
             pointer-events: none;
-            z-index: 2;
+            z-index: 100; /* Ensure confetti is on top */
             display: none;
         }
         
@@ -896,7 +899,7 @@
             position: absolute;
             top: -10px;
             right: -10px;
-            z-index: 1;
+            z-index: 3; /* Ensure ribbon is above pattern but below popups if any */
         }
         
         .ribbon::before,
@@ -954,8 +957,8 @@
             background: linear-gradient(45deg, #ff99cc, #ff66b2, #ff33cc, #ff66b2, #ff99cc);
             background-size: 200% 200%;
             border-radius: 30px;
-            transition: width 3s ease;
-            animation: gradient 3s linear infinite;
+            transition: width 3s ease-out; /* Matched JS duration */
+            animation: gradient 3s linear infinite; /* 'gradient' name matches body bg anim */
             box-shadow: 0 0 15px rgba(255, 102, 178, 0.6);
         }
         
@@ -985,6 +988,7 @@
         .flower-border {
             display: flex;
             justify-content: space-around;
+            flex-wrap: wrap; /* Added for responsiveness */
             margin: 15px 0;
         }
         
@@ -994,6 +998,7 @@
             animation-delay: calc(var(--delay) * 0.2s);
             filter: drop-shadow(0 2px 3px rgba(0,0,0,0.1));
             position: relative;
+            margin: 5px; /* Added for spacing */
         }
         
         .flower::after {
@@ -1021,7 +1026,7 @@
             50% { transform: translateY(-8px) rotate(5deg); }
         }
         
-        .sparkle {
+        .sparkle { /* This class exists but not used in my generated HTML body */
             position: absolute;
             color: #ffcc00;
             font-size: 20px;
@@ -1036,7 +1041,7 @@
             50% { opacity: 1; transform: scale(1.2); }
         }
         
-        .paw-prints {
+        .paw-prints { /* This class exists but not used in my generated HTML body */
             position: absolute;
             color: rgba(255, 153, 204, 0.2);
             font-size: 18px;
@@ -1052,7 +1057,7 @@
             text-align: center;
             box-shadow: 0 8px 20px rgba(255, 153, 204, 0.3);
             font-family: 'Baloo 2', cursive;
-            display: none;
+            display: none; /* Initially hidden */
             position: relative;
             border: 2px dashed rgba(255, 153, 204, 0.4);
         }
@@ -1098,7 +1103,7 @@
             margin: 30px 40px;
             box-shadow: 0 8px 20px rgba(0,0,0,0.1);
             border: 2px solid var(--tertiary-color);
-            display: none;
+            display: none; /* Initially hidden */
             transform: rotate(2deg);
         }
   
@@ -1116,6 +1121,8 @@
             height: 25px;
             bottom: -20px;
             left: 25px;
+            border-top-color: transparent; /* Ensure border continuity */
+            border-left-color: transparent;
         }
         
         .thought-bubble:after {
@@ -1123,6 +1130,8 @@
             height: 15px;
             bottom: -35px;
             left: 40px;
+            border-top-color: transparent;
+            border-left-color: transparent;
         }
         
         .emoji-rain {
@@ -1132,7 +1141,7 @@
             width: 100%;
             height: 100%;
             pointer-events: none;
-            z-index: 1;
+            z-index: 99; /* Below confetti but above most content */
             display: none;
         }
         
@@ -1177,3 +1186,317 @@
         @keyframes wiggle {
             0%, 100% { transform: rotate(-15deg); }
             50% { transform: rotate(15deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="hearts"></div>
+    <div class="confetti"></div>
+    <div class="emoji-rain"></div>
+
+    <div class="container animate__animated animate__fadeIn">
+        <div class="thai-pattern"></div>
+        <div class="ribbon">
+            <div class="ribbon-content">For You!</div>
+        </div>
+
+        <h1>To My Beautiful <span class="name">Kwankao</span> <span class="heart">💖</span></h1>
+
+        <p>
+            My dearest Kwankao, every day with you is a new adventure, a beautiful song, a moment I cherish.
+            You bring <span class="highlight">so much joy</span> and <span class="highlight">happiness</span> into my life.
+            Just thinking about you makes my heart do a little <span class="super-highlight">happy dance</span>!
+            <span class="heart">💖</span>
+        </p>
+
+        <div class="cute-icons">
+            <span class="cute-icon" style="--delay: 0;">🥰</span>
+            <span class="cute-icon" style="--delay: 1;">😊</span>
+            <span class="cute-icon" style="--delay: 2;">🌟</span>
+            <span class="cute-icon" style="--delay: 3;">🌸</span>
+            <span class="cute-icon" style="--delay: 4;">🎉</span>
+            <span class="cute-icon" style="--delay: 5;">💌</span>
+            <span class="cute-icon" style="--delay: 6;">✨</span>
+            <span class="cute-icon" style="--delay: 7;">💕</span>
+            <span class="cute-icon" style="--delay: 8;">🎀</span>
+        </div>
+
+        <div class="animal-collection">
+            <div class="cute-animal" style="--delay: 0; --rotation: -5deg;">
+                <div class="bunny-face">
+                    <div class="bunny-ears bunny-ear-left"></div>
+                    <div class="bunny-ears bunny-ear-right"></div>
+                    <div class="bunny-eye bunny-eye-left"></div>
+                    <div class="bunny-eye bunny-eye-right"></div>
+                    <div class="bunny-nose"></div>
+                    <div class="bunny-mouth"></div>
+                    <div class="bunny-blush bunny-blush-left"></div>
+                    <div class="bunny-blush bunny-blush-right"></div>
+                </div>
+            </div>
+            <div class="cute-animal" style="--delay: 1; --rotation: 5deg;">
+                <div class="cat-face">
+                    <div class="cat-ear cat-ear-left"></div>
+                    <div class="cat-ear cat-ear-right"></div>
+                    <div class="cat-eye cat-eye-left"></div>
+                    <div class="cat-eye cat-eye-right"></div>
+                    <div class="cat-nose"></div>
+                    <div class="cat-mouth"></div>
+                    <div class="cat-whiskers cat-whiskers-left"></div>
+                    <div class="cat-whiskers cat-whiskers-right"></div>
+                </div>
+            </div>
+            <div class="cute-animal" style="--delay: 2; --rotation: -3deg;">
+                <div class="puppy-face">
+                    <div class="puppy-ear puppy-ear-left"></div>
+                    <div class="puppy-ear puppy-ear-right"></div>
+                    <div class="puppy-eye puppy-eye-left"></div>
+                    <div class="puppy-eye puppy-eye-right"></div>
+                    <div class="puppy-nose"></div>
+                    <div class="puppy-mouth"></div>
+                </div>
+            </div>
+            <div class="cute-animal" style="--delay: 3; --rotation: 3deg;">
+                <div class="elephant-face">
+                    <div class="elephant-ear elephant-ear-left"></div>
+                    <div class="elephant-ear elephant-ear-right"></div>
+                    <div class="elephant-eye elephant-eye-left"></div>
+                    <div class="elephant-eye elephant-eye-right"></div>
+                    <div class="elephant-trunk"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="balloon-container">
+            <div class="balloon" style="--delay: 0;"></div>
+            <div class="balloon" style="--delay: 0.5;"></div>
+            <div class="balloon" style="--delay: 1;"></div>
+            <div class="balloon" style="--delay: 1.5;"></div>
+            <div class="balloon" style="--delay: 2;"></div>
+        </div>
+
+        <div class="message-box">
+            <p>You're my <span class="super-highlight">favorite person</span> in the whole wide world. Every moment spent with you is precious. I appreciate your kindness, your laugh, and the way you make everything better. <span class="heart">💖</span></p>
+        </div>
+
+        <div class="polaroid">
+            <div class="photo-placeholder">🎁</div>
+            <div class="photo-caption">Our Special Bond</div>
+        </div>
+
+        <button class="btn animate__animated animate__pulse animate__infinite" onclick="showSpecialMessage()">Click for a Surprise!</button>
+        <button class="btn" onclick="revealMoreLove()">Reveal More Love <span class="heart">💖</span></button>
+
+        <div class="special-message" id="specialMessage">
+            <h2>A Little Secret...</h2>
+            <p>
+                ...is that you mean <span class="super-highlight">absolutely everything</span> to me!
+                Thank you for being you, Kwankao. You are incredibly special.
+                <span class="heart">💖</span><span class="heart">💖</span><span class="heart">💖</span>
+            </p>
+            <img src="https://placekitten.com/200/150" alt="Cute Kitten" style="border-radius: 10px; margin-top: 15px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+        </div>
+        
+        <div class="thought-bubble" id="thoughtBubble">
+            <p>Just thinking about how amazing you are... <span class="highlight">You're my star!</span> ✨</p>
+        </div>
+
+        <div id="loveGauge">
+            <div id="loveBar"></div>
+            <div id="lovePercent">Love: 0%</div>
+        </div>
+
+        <div class="countdown" id="countdownTimer">
+            <div class="countdown-title">Special Day Countdown!</div>
+            <div class="countdown-time" id="countdownTime">Loading...</div>
+        </div>
+        
+        <div class="hugs-kisses">XOXO</div>
+
+        <div class="flower-border">
+            <span class="flower" style="--delay: 0;">🌸</span>
+            <span class="flower" style="--delay: 1;">🌷</span>
+            <span class="flower" style="--delay: 2;">🌹</span>
+            <span class="flower" style="--delay: 3;">🌻</span>
+            <span class="flower" style="--delay: 4;">🌼</span>
+            <span class="flower" style="--delay: 5;">🌺</span>
+            <span class="flower" style="--delay: 6;">💐</span>
+            <span class="flower" style="--delay: 7;">💮</span>
+        </div>
+        
+        <div class="sticker">💌</div>
+
+        <p class="signature">
+            With all my love,<br>
+            Your Adorer <span class="heart">💖</span>
+        </p>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            createFallingHearts(30);
+            updateLoveGauge(100, 3000); // Animate to 100% over 3 seconds
+            
+            const futureDate = new Date();
+            futureDate.setDate(futureDate.getDate() + Math.floor(Math.random() * 10) + 5); // 5-14 days from now
+            futureDate.setHours(futureDate.getHours() + Math.floor(Math.random() * 24));
+            futureDate.setMinutes(futureDate.getMinutes() + Math.floor(Math.random() * 60));
+            startCountdown(futureDate.toISOString());
+        });
+
+        function createFallingHearts(count) {
+            const heartsContainer = document.querySelector('.hearts');
+            if (!heartsContainer) return;
+            const heartEmojis = ['💖', '💕', '❤️', '💗', '💓', '💞', '💝'];
+            for (let i = 0; i < count; i++) {
+                const heart = document.createElement('div');
+                heart.classList.add('falling-heart');
+                heart.innerHTML = heartEmojis[Math.floor(Math.random() * heartEmojis.length)];
+                heart.style.left = Math.random() * 100 + 'vw';
+                heart.style.animationDuration = (Math.random() * 3 + 4) + 's'; // 4-7 seconds
+                heart.style.animationDelay = Math.random() * 5 + 's';
+                heart.style.fontSize = (Math.random() * 1 + 1) + 'rem'; // 1rem to 2rem
+                heartsContainer.appendChild(heart);
+            }
+        }
+
+        function showSpecialMessage() {
+            const specialMessage = document.getElementById('specialMessage');
+            if (specialMessage) {
+                specialMessage.style.display = 'block';
+                specialMessage.classList.remove('animate__bounceInUp'); // Reset animation if clicked multiple times
+                void specialMessage.offsetWidth; // Trigger reflow to restart animation
+                specialMessage.classList.add('animate__animated', 'animate__bounceInUp');
+                startConfetti(150);
+            }
+        }
+
+        function revealMoreLove() {
+            const thoughtBubble = document.getElementById('thoughtBubble');
+            const countdownTimer = document.getElementById('countdownTimer');
+            
+            if (thoughtBubble && thoughtBubble.style.display !== 'block') {
+                thoughtBubble.style.display = 'block';
+                thoughtBubble.classList.remove('animate__fadeInLeftBig');
+                void thoughtBubble.offsetWidth;
+                thoughtBubble.classList.add('animate__animated', 'animate__fadeInLeftBig');
+            }
+            if (countdownTimer && countdownTimer.style.display !== 'block') {
+                countdownTimer.style.display = 'block';
+                countdownTimer.classList.remove('animate__fadeInRightBig');
+                void countdownTimer.offsetWidth;
+                countdownTimer.classList.add('animate__animated', 'animate__fadeInRightBig');
+            }
+            startEmojiRain(60, ['🥰', '😍', '😘', '🥳', '🎉', '💖', '🌟', '✨']);
+        }
+
+        function updateLoveGauge(percentage, duration) {
+            const loveBar = document.getElementById('loveBar');
+            const lovePercentText = document.getElementById('lovePercent');
+            if (loveBar && lovePercentText) {
+                loveBar.style.width = percentage + '%';
+                
+                let currentPercent = 0;
+                const stepTime = 50; // ms
+                const steps = duration / stepTime;
+                const increment = percentage / steps;
+                
+                const interval = setInterval(() => {
+                    currentPercent += increment;
+                    if (currentPercent >= percentage) {
+                        currentPercent = percentage;
+                        clearInterval(interval);
+                    }
+                    lovePercentText.textContent = `Love: ${Math.floor(currentPercent)}%`;
+                    if (Math.floor(currentPercent) === 100) {
+                         lovePercentText.textContent = `Love: 100% Unconditional! 💖`;
+                    }
+                }, stepTime);
+            }
+        }
+
+        function startConfetti(count) {
+            const confettiContainer = document.querySelector('.confetti');
+            if (!confettiContainer) return;
+            confettiContainer.style.display = 'block';
+            
+            // Limit active confetti pieces to avoid performance issues
+            const maxConfetti = 200;
+            if (confettiContainer.children.length > maxConfetti - count) {
+                // Optionally clear some old ones or just don't add new ones
+                // For now, we'll just add, but be mindful of too many elements
+            }
+
+            const colors = ['#ff66b2', '#ff99cc', '#ffcce6', '#ff3399', '#ccf2ff', '#99e6ff', '#fff9b3', '#ffddb3'];
+            for (let i = 0; i < count; i++) {
+                const piece = document.createElement('div');
+                piece.classList.add('confetti-piece');
+                piece.style.left = Math.random() * 100 + 'vw';
+                piece.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                const rotation = Math.random() * 360;
+                piece.style.transform = `rotate(${rotation}deg)`;
+                const animDuration = Math.random() * 3 + 4; // 4-7s
+                const animDelay = Math.random() * 1; // 0-1s delay
+                piece.style.animation = `confettiRain ${animDuration}s linear ${animDelay}s forwards`;
+                confettiContainer.appendChild(piece);
+                
+                piece.addEventListener('animationend', () => {
+                    piece.remove();
+                });
+            }
+        }
+
+        function startEmojiRain(count, emojis) {
+            const emojiRainContainer = document.querySelector('.emoji-rain');
+            if (!emojiRainContainer) return;
+            emojiRainContainer.style.display = 'block';
+
+            for (let i = 0; i < count; i++) {
+                const emojiEl = document.createElement('div');
+                emojiEl.classList.add('emoji');
+                emojiEl.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+                emojiEl.style.left = Math.random() * 95 + 'vw'; // Keep within viewport slightly
+                emojiEl.style.fontSize = (Math.random() * 1.5 + 1.5) + 'rem'; // 1.5rem to 3rem
+                const animDuration = Math.random() * 4 + 5; // 5-9s
+                const animDelay = Math.random() * 2; // 0-2s delay
+                emojiEl.style.animation = `emojiRain ${animDuration}s linear ${animDelay}s forwards`;
+                emojiRainContainer.appendChild(emojiEl);
+
+                emojiEl.addEventListener('animationend', () => {
+                    emojiEl.remove();
+                });
+            }
+        }
+
+        function startCountdown(targetDateString) {
+            const countdownElement = document.getElementById('countdownTime');
+            if (!countdownElement) return;
+
+            const targetDate = new Date(targetDateString).getTime();
+
+            if (isNaN(targetDate)) {
+                countdownElement.textContent = "Special date soon!";
+                return;
+            }
+            
+            const interval = setInterval(() => {
+                const now = new Date().getTime();
+                const distance = targetDate - now;
+
+                if (distance < 0) {
+                    clearInterval(interval);
+                    countdownElement.innerHTML = "Our special day is here! <span class='heart'>🎉</span>";
+                    return;
+                }
+
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                countdownElement.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+            }, 1000);
+        }
+    </script>
+</body>
+</html>
